@@ -29,18 +29,25 @@ public class ballLogic : MonoBehaviour {
 
 	void OnMouseUp(){
 
+		if (!gameStatus.isReseting && !gameStatus.ballMoving) {
 
-		Vector2 shoot = new Vector2();
-		shoot.x = rb.position.x - Camera.main.ScreenToWorldPoint (Input.mousePosition).x;
-		shoot.y = rb.position.y - Camera.main.ScreenToWorldPoint (Input.mousePosition).y;
+			Vector2 shoot = new Vector2 ();
+			shoot.x = rb.position.x - Camera.main.ScreenToWorldPoint (Input.mousePosition).x;
+			shoot.y = rb.position.y - Camera.main.ScreenToWorldPoint (Input.mousePosition).y;
 
-		if (shoot.magnitude > 15)
-			shoot = shoot / shoot.magnitude * 15;
-		rb.AddForce (shoot, ForceMode2D.Force);
-		//audio.Play ();
+			if (shoot.magnitude > 15)
+				shoot = shoot / shoot.magnitude * 15;
+			rb.AddForce (shoot, ForceMode2D.Force);
+			//audio.Play ();
 
-		gameStatus.ballMoving = true;
-		StartCoroutine (makeIsShootedtrue ());
+			gameStatus.ballMoving = true;
+			StartCoroutine (makeIsShootedtrue ());
+
+			gameStatus.ballPassed = false;
+
+			checkBallPass.ResetPoints.clear ();
+
+		}
 	}
 
 	IEnumerator makeIsShootedtrue(){

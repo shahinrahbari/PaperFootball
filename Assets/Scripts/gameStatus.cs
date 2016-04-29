@@ -11,6 +11,9 @@ public class gameStatus {
 	public static bool ballMoving = false;
 	public static bool pressed = false;
 	public static bool isShooted = false;
+	public static bool ballPassed = false;
+	public static bool isReseting = false;
+
 
 
 }

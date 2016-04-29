@@ -4,7 +4,7 @@ using System.Collections;
 public class checkBallsGoal : MonoBehaviour {
 
 	public GameObject[] balls = new GameObject[3];
-	private int speed = 5;
+	private int speed = 8;
 	public Vector3 newPosition1 = new Vector3();
 	public Vector3 newPosition2 = new Vector3();
 	public Vector3 newPosition3 = new Vector3();
