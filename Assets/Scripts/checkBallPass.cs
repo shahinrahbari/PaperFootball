@@ -32,8 +32,14 @@ public class checkBallPass : MonoBehaviour {
 		checkIfBallIsMoving ();
 		checkIfBallIsPassed ();
 
-		Debug.Log ("ismoving: " + gameStatus.ballMoving);
+		
 
+        Debug.Log("****************************************");
+        Debug.Log("game status pressed:" + gameStatus.pressed);
+        Debug.Log("game status ballMoving:" + gameStatus.ballMoving);
+        Debug.Log("game status isShooted:" + gameStatus.isShooted);
+        Debug.Log(" ballPassed:" + ballPassed);
+        Debug.Log("****************************************");
 
 		if (gameStatus.pressed) {
 
@@ -72,7 +78,7 @@ public class checkBallPass : MonoBehaviour {
 	
 			if (balls [0].GetComponent<Rigidbody2D> ().velocity.magnitude > 0.001) {
 				gameStatus.ballMoving = true;
-				Debug.Log ("velo0:" + balls [0].GetComponent<Rigidbody2D> ().velocity.x);
+			//	Debug.Log ("velo0:" + balls [0].GetComponent<Rigidbody2D> ().velocity.x);
 			}
 
 			if (balls [1].GetComponent<Rigidbody2D> ().velocity.magnitude > 0.001) {
